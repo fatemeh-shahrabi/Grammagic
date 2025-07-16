@@ -35,9 +35,9 @@ Grammagic focuses on learning by doing. Each day, learners read structured lesso
 
 All screenshots can be found in the [`screenshots`](./screenshots) folder:
 
-| ![Homepage](./screenshots/homepage.png) | ![Dashboard](./screenshots/dashboard.png) |
+| ![Homepage](./Screenshots/homepage.png) | ![Dashboard](./Screenshot/Dashboard.png) |
 |-----------------------------------------|-------------------------------------------|
-| ![Textbook](./screenshots/textbook.png) | ![Test](./screenshots/test.png)           |
+| ![Textbook](./Screenshots/textbook.png) | ![Test](./Screenshots/test.png)           |
 
 ---
 
