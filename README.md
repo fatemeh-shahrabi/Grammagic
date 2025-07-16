@@ -37,7 +37,7 @@ All screenshots can be found in the [`screenshots`](./screenshots) folder:
 
 | ![Homepage](./Screenshots/Homepage.png) | ![Dashboard](./Screenshots/Dashboard.png) |
 |-----------------------------------------|-------------------------------------------|
-| ![Textbook](./Screenshots/textbook.png) | ![Test](./Screenshot/test.png)            |
+| ![Textbook](./Screenshots/textbook.png) | ![Test](./Screenshots/test.png)           |
 
 ---
 
