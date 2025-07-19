@@ -72,7 +72,15 @@ php artisan migrate --seed
 # 8. Start development server
 php artisan serve
 ```
+```
 
+Environment Variables
+
+Make sure to add your OpenAI API key in the .env file
+
+```env
+OPENAI_API_KEY="your_openai_api_key_here"
+```
 ---
 
 ## Usage Guide
