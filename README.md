@@ -25,8 +25,6 @@ Grammagic focuses on learning by doing. Each day, learners read structured lesso
 - **21-Day Grammar Journey**: Covers fundamental English grammar topics with increasing difficulty
 - **AI-Powered Feedback**: Evaluates student-written sentences and gives tailored feedback using GPT-4o-mini
 - **Gamified Streak Tracking**: Encourages consistent daily learning through streak monitoring
-- **Responsive Interface**: Optimized layout with Poppins font and dynamic gradients (#4F46E5 → #10B981)
-- **Markdown Lessons**: All lessons written and rendered in Markdown using `league/commonmark`
 - **Progressive Unlocking**: New grammar levels unlock only after completing previous ones
 
 ---
