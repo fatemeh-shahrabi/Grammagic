@@ -1,21 +1,29 @@
 <div class="min-h-screen bg-gray-50 font-poppins">
-    <!-- Header -->
+    <!-- Header Section -->
     <div class="bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo and Site Name -->
             <div class="flex items-center">
                 <img src="{{ asset('images/grammagic.png') }}" alt="Grammagic Logo" class="h-10 w-auto">
                 <span class="ml-3 text-xl font-bold text-gray-800">Grammagic</span>
             </div>
+
+            <!-- Profile and Logout -->
             <div class="flex items-center space-x-4">
+                <!-- Profile Link -->
                 <a href="{{ route('profile') }}" class="flex items-center space-x-2 text-gray-600 hover:text-indigo-600">
+                    <!-- Profile Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                     <span class="hidden sm:inline">Profile</span>
                 </a>
+
+                <!-- Logout Form -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="text-gray-600 hover:text-indigo-600 flex items-center space-x-2">
+                        <!-- Logout Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                         </svg>
@@ -26,7 +34,7 @@
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content Wrapper -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Welcome Section -->
         <div class="mb-10">
@@ -34,8 +42,9 @@
             <p class="text-gray-600">Pick up where you left off or start a new lesson.</p>
         </div>
 
-        <!-- Progress Overview -->
+        <!-- Progress Overview Section -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Current Streak Card -->
             <div class="bg-white p-6 rounded-xl shadow-sm">
                 <div class="flex items-center justify-between">
                     <div>
@@ -43,6 +52,7 @@
                         <h3 class="text-2xl font-bold text-gray-800 mt-1">{{ auth()->user()->current_streak }} days</h3>
                     </div>
                     <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <!-- Streak Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
@@ -50,6 +60,7 @@
                 </div>
             </div>
 
+            <!-- Levels Completed Card -->
             <div class="bg-white p-6 rounded-xl shadow-sm">
                 <div class="flex items-center justify-between">
                     <div>
@@ -57,6 +68,7 @@
                         <h3 class="text-2xl font-bold text-gray-800 mt-1">{{ $completedLevels }} of {{ $levels->count() }}</h3>
                     </div>
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <!-- Checkmark Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -64,6 +76,7 @@
                 </div>
             </div>
 
+            <!-- Days Remaining Card -->
             <div class="bg-white p-6 rounded-xl shadow-sm">
                 <div class="flex items-center justify-between">
                     <div>
@@ -71,6 +84,7 @@
                         <h3 class="text-2xl font-bold text-gray-800 mt-1">{{ 21 - $completedLevels }} days</h3>
                     </div>
                     <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <!-- Clock Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -79,24 +93,31 @@
             </div>
         </div>
 
-        <!-- Levels Section -->
+        <!-- Learning Path Section -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <!-- Section Header -->
             <div class="px-6 py-5 border-b border-gray-200">
                 <h3 class="text-lg font-medium text-gray-800">Your Learning Path</h3>
             </div>
+
+            <!-- Levels List -->
             <div class="divide-y divide-gray-200">
                 @foreach ($levels as $level)
+                    <!-- Single Level Row -->
                     <div class="p-6 hover:bg-gray-50 transition duration-150 ease-in-out">
                         <div class="flex items-start justify-between">
                             <div class="flex items-start space-x-4">
+                                <!-- Level Icon -->
                                 <div class="flex-shrink-0">
                                     @if (in_array($level->id, $unlockedLevels))
+                                        <!-- Unlocked Level Icon -->
                                         <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                             </svg>
                                         </div>
                                     @else
+                                        <!-- Locked Level Icon -->
                                         <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -104,6 +125,8 @@
                                         </div>
                                     @endif
                                 </div>
+
+                                <!-- Level Info -->
                                 <div>
                                     <h4 class="font-medium text-gray-800">{{ $level->name }}</h4>
                                     <p class="text-sm text-gray-500 mt-1">{{ $level->description }}</p>
@@ -114,12 +137,16 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Start Button or Locked Label -->
                             <div>
                                 @if (in_array($level->id, $unlockedLevels))
+                                    <!-- Start Level Button -->
                                     <button wire:click="startLevel({{ $level->id }})" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         Start
                                     </button>
                                 @else
+                                    <!-- Locked Level Label -->
                                     <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-medium bg-gray-100 text-gray-800">
                                         Locked
                                     </span>
@@ -131,9 +158,10 @@
             </div>
         </div>
 
-        <!-- Motivation Quote -->
+        <!-- Motivation Quote Section -->
         <div class="mt-10 bg-indigo-50 rounded-xl p-6">
             <div class="text-center">
+                <!-- Quote Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
                 </svg>

@@ -9,20 +9,22 @@ class GrammarLevel extends Model
 {
     use HasFactory;
 
+    // Fillable fields for mass assignment
     protected $fillable = ['day_number', 'topic', 'order'];
 
-    // Relationship with questions (one-to-many)
+    // One-to-many relationship with questions
     public function questions()
     {
         return $this->hasMany(Question::class);
     }
 
+    // One-to-one relationship with textbook
     public function textbook()
-{
-    return $this->hasOne(Textbook::class);
-}
+    {
+        return $this->hasOne(Textbook::class);
+    }
 
-    // Relationship with users (many-to-many)
+    // Many-to-many relationship with users
     public function users()
     {
         return $this->belongsToMany(User::class);
