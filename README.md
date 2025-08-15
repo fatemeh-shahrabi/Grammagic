@@ -61,7 +61,6 @@ touch database/database.sqlite
 
 # 6. Update .env
 DB_CONNECTION=sqlite
-DB_DATABASE=/absolute/path/to/database/database.sqlite
 OPENAI_API_KEY=your-openai-key
 
 # 7. Run migrations and seed data
